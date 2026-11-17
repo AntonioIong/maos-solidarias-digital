@@ -25,4 +25,4 @@ jobs:
         run: pip install -r backend/dev-requirements.txt
       - name: Executar testes e medir cobertura
         working-directory: backend
-        run: pytest --cov=app --cov-report=term-missing test_suite
+        run: python -m pytest --cov=app --cov-report=term-missing test_suite
