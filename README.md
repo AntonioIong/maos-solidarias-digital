@@ -1,10 +1,10 @@
 # Mãos Solidárias Digital
 
-MVP planejado para apoiar a organização de famílias atendidas, doações, estoque e entregas em uma associação comunitária.
+MVP em desenvolvimento para apoiar a organização de famílias atendidas, doações, estoque e entregas em uma associação comunitária.
 
 ## Objetivo
 
-Reunir em um só lugar as informações necessárias para acompanhar itens e suas validades, registrar entregas e reduzir retrabalho. O projeto está em fase de planejamento e implementação; este repositório será atualizado conforme o desenvolvimento avançar.
+Reunir em um só lugar as informações necessárias para acompanhar itens e suas validades, registrar entregas e reduzir retrabalho. O projeto está em fase inicial de implementação.
 
 ## Escopo planejado
 
@@ -14,19 +14,36 @@ Reunir em um só lugar as informações necessárias para acompanhar itens e sua
 - Relatórios mensais.
 - Interface web responsiva, com suporte planejado para uso offline.
 
-## Tecnologias planejadas
+## Tecnologias
 
-- Front-end: Angular e Angular Material.
 - API: Python com FastAPI.
-- Persistência: PostgreSQL com SQLAlchemy e Alembic.
-- Aplicação web instalável (PWA), com sincronização planejada para períodos sem conexão.
+- Front-end planejado: Angular e Angular Material.
 
-As versões e configurações serão confirmadas durante a implementação.
+## API inicial
+
+A API contém atualmente um endpoint de saúde (GET /health) e um esquema de entrada inicial para cadastro de família. Persistência, autenticação, interface web e os demais fluxos ainda estão em desenvolvimento.
+
+### Executar localmente
+
+A partir da raiz do repositório, crie e ative um ambiente virtual e instale as dependências:
+
+```bash
+python -m venv .venv
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+# Linux ou macOS
+source .venv/bin/activate
+pip install -r backend/requirements.txt
+```
+
+Inicie a API:
+
+```bash
+uvicorn app.main:app --app-dir backend --reload
+```
+
+A verificação de disponibilidade fica em http://127.0.0.1:8000/health.
 
 ## Privacidade
 
-O projeto prevê minimizar os dados pessoais armazenados. Não inclua neste repositório dados reais de pessoas atendidas, credenciais, arquivos de entrevistas ou evidências de campo. Requisitos e dados de contexto devem ser validados com o parceiro antes de serem tratados como fatos.
-
-## Status
-
-Planejamento técnico em andamento. Código-fonte, instruções de execução e testes serão documentados aqui à medida que forem implementados.
+O esquema inicial de cadastro trabalha com contagens e exige consentimento. Não inclua dados pessoais reais em exemplos, commits ou issues deste repositório.
