@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+SQLAlchemy>=2,<3
+alembic
+psycopg[binary]
+PyJWT
+argon2-cffi
